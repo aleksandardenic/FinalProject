@@ -21,7 +21,8 @@ public class NotificationSistemPage extends BasicPage {
 	    }
 	
 	public String messageText () {
-		return this.driver.findElement(By.xpath("//div[@class='div_msg']/ul/li")).getText();
+		
+		return this.getMessage().getText();
 	}
 	
 	public void waitMessage () {

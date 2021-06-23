@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasicPage {
 	
-	public LoginPage (WebDriver driver, JavascriptExecutor js) {
-		super(driver, js);
+	public LoginPage (WebDriver driver, JavascriptExecutor js, WebDriverWait waiter) {
+		super(driver, js, waiter);
 	}
 	
 	public WebElement getLogin () {
@@ -33,8 +34,10 @@ public class LoginPage extends BasicPage {
     }
     
     public void login (String username, String password) {
-    	this.getLogin().click();
+   // 	this.getLogin().click();
+    	this.getUsername().clear();
     	this.getUsername().sendKeys(username);
+    	this.getPassword().clear();
     	this.getPassword().sendKeys(password);
     	this.getSubmit().click();
     }

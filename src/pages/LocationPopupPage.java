@@ -4,11 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LocationPopupPage extends BasicPage {
 	
-	public LocationPopupPage (WebDriver driver, JavascriptExecutor js) {
-		super(driver, js);
+	public LocationPopupPage (WebDriver driver, JavascriptExecutor js, WebDriverWait waiter) {
+		super(driver, js, waiter);
 	}
 	
 	public WebElement getLocationHeader () {
@@ -16,7 +17,7 @@ public class LocationPopupPage extends BasicPage {
 	    }
 	
 	public WebElement getLocationHeaderClose () {
-		return driver.findElement(By.xpath("//*[@class=\"model-box-content\"]/div/a"));
+		return driver.findElement(By.xpath("//*[@class=\"model-box-mid location-search\"]/a"));
 	    }
 	
 	public WebElement getKeyword () {
