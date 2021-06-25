@@ -73,25 +73,21 @@ public class ProfilePage extends BasicPage {
 		return driver.findElement(By.name("btn_submit"));
 	    }
 	
+	public WebElement getUploadBtn () {
+		return driver.findElement(By.xpath("//a[@title='Uplaod']"));
+	}
 	
+	public WebElement getRemoveBtn () {
+		return driver.findElement(By.xpath("//a[@title='Remove']"));
+	}
 	
-	public void uploadPhoto (String imagePath) {
-		Actions action = new Actions (driver);
-		WebElement hover = driver.findElement(By.className("avatar"));
-		action.moveToElement(hover).build().perform();
-		
-		WebElement upload = driver.findElement(By.xpath("//a[@title='Uplaod']"));
-		js.executeScript("arguments[0].click();", upload);
-		
-		driver.findElement(By.xpath("//input[@type='file']")).sendKeys(imagePath);
-		
-	
-		
+	public void uploadPhoto (String imgPath) {
+		js.executeScript("arguments[0].click();", getUploadBtn ());
+		driver.findElement(By.xpath("//input[@type='file']")).sendKeys(imgPath);
 	}
 	
 	public void removePhoto () {
-		WebElement remove = driver.findElement(By.xpath("//a[@title='Remove']"));
-		js.executeScript("arguments[0].click();", remove);
+		js.executeScript("arguments[0].click();", getRemoveBtn());
 	}
 	
 	

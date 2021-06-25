@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 
 public class MealItemTest extends BasicTest {
 	
-	@Test
+	@Test (priority = 1)
 	public void addMealToCart() throws IOException, InterruptedException {
 
 		driver.get ("http://demo.yo-meals.com/meal/lobster-shrimp-chicken-quesadilla-combo");
@@ -33,7 +33,7 @@ public class MealItemTest extends BasicTest {
 	
 	}
 
-	@Test
+	@Test (priority = 2)
 	public void addMealToFavorite() throws InterruptedException {
 
 		driver.get ("http://demo.yo-meals.com/meal/lobster-shrimp-chicken-quesadilla-combo");
@@ -56,7 +56,7 @@ public class MealItemTest extends BasicTest {
 	}
 	
 	
-	@Test
+	@Test (priority = 3)
 	public void clearCart() throws IOException, InterruptedException {
 		driver.get(baseURL + "http://demo.yo-meals.com/meals");
 

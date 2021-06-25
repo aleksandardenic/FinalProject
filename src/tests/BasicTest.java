@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.asserts.SoftAssert;
 
 import pages.AuthPage;
 import pages.CartSummaryPage;
@@ -31,6 +32,7 @@ import pages.LoginPage;
 import pages.MealPage;
 import pages.NotificationSistemPage;
 import pages.ProfilePage;
+import pages.SearchResultPage;
 
 
 public abstract class BasicTest {
@@ -48,6 +50,8 @@ public abstract class BasicTest {
 	protected MealPage mealPage;
 	protected CartSummaryPage cartSummaryPage;
 	protected AuthPage authPage;
+	protected SearchResultPage searchResultPage;
+	protected SoftAssert softAssert;
 	
 	
 	
@@ -66,6 +70,7 @@ public abstract class BasicTest {
 		
 		waiter = new WebDriverWait (driver,10);
 		js = (JavascriptExecutor) driver;
+		SoftAssert softAssert = new SoftAssert();
 		
 		loginPage = new LoginPage (driver, js, waiter);
 		locationPopupPage = new LocationPopupPage (driver, js, waiter);
@@ -74,6 +79,7 @@ public abstract class BasicTest {
 		authPage = new AuthPage (driver, js, waiter);
 		mealPage = new MealPage (driver, js, waiter);
 		cartSummaryPage = new CartSummaryPage (driver, js, waiter);
+		searchResultPage = new SearchResultPage (driver, js, waiter);
 
 }
 	

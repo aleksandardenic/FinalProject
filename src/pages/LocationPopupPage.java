@@ -25,7 +25,7 @@ public class LocationPopupPage extends BasicPage {
 	    }
 	
 	public WebElement getLocationItem (String locationName) {
-		return driver.findElement(By.xpath("//li/a[contains(text(), '\" + locationName + \"')]/.."));
+		return driver.findElement(By.xpath("//li/a[contains(text(), '" + locationName + "')]/.."));
 	    }
 	
 	public WebElement getLocationInput () {

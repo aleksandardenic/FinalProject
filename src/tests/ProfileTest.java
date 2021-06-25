@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class ProfileTest extends BasicTest {
 	
 	
-	@Test
+	@Test (priority = 1)
 	public void editProfile () throws InterruptedException  {
 		driver.get(baseURL + "/guest-user/login-form");
 		
@@ -32,7 +32,7 @@ public class ProfileTest extends BasicTest {
 		
 	}
 	
-	@Test
+	@Test (priority = 2)
 	public void changeProfile () throws IOException, InterruptedException {
 		
         driver.get(baseURL + "/guest-user/login-form");
